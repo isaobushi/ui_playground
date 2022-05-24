@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+echo '🛠 Styling, testing and building before committing'
+# Check tsconfig standards
+yarn run check-types || (
+  echo '🚨  TypeScript check failed
+     Please  fix the errors and try again ⛔️'
+  exit 1
+)
+# check prettier standards
+yarn run check-format || (
+  echo '🧹 Prettier check failed
+     Please fix the errors and try again ⛔️'
+  exit 1
+)
+# check eslint standards
+yarn run check-lint || (
+  echo '🚨  ESLint check failed
+     Please fix the errors and try again ⛔️'
+  exit 1
+)
+# if everything is ok, try run a build
+
+echo '🚀  Building...'
+yarn run build || (
+  echo '🚨  Build failed
+     Please fix the errors and try again ⛔️'
+  exit 1
+)
+# if builds commit
+echo '✅ ✅ ✅ Committing...'
+

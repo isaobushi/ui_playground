@@ -1,0 +1,36 @@
+{
+  "name": "ui-playground",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "check-types": "tsc --noEmit --pretty",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext .js",
+    "format": "prettier --write .",
+    "test-all": "yarn run check-format && yarn run check-lint && yarn run check-types && yarn run format && yarn run build"
+  },
+  "dependencies": {
+    "next": "12.1.6",
+    "prettier": "^2.6.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
+    "typescript": "^4.6.4",
+    "husky": "^8.0.0"
+  }
+}
