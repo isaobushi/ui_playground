@@ -44,7 +44,6 @@ export default function Home(props: IDataProps) {
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
               {contributionDays.map((day, i) => {
-                const { contributionCount } = day;
                 const previousDayCount = contributionDays[i - 1]
                   ? contributionDays[i - 1].contributionCount
                   : 0;
@@ -65,9 +64,7 @@ export default function Home(props: IDataProps) {
                       justifyContent: "center",
                       margin: "2px",
                     }}
-                  >
-                    {contributionCount}
-                  </div>
+                  ></div>
                 );
               })}
             </div>
